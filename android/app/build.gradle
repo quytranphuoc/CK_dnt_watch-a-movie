@@ -1,0 +1,317 @@
+// def localProperties = new Properties()
+// def localPropertiesFile = rootProject.file('local.properties')
+// if (localPropertiesFile.exists()) {
+//     localPropertiesFile.withReader('UTF-8') { reader ->
+//         localProperties.load(reader)
+//     }
+// }
+
+// def flutterRoot = localProperties.getProperty('flutter.sdk')
+// if (flutterRoot == null) {
+//     throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+// }
+
+// def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+// if (flutterVersionCode == null) {
+//     flutterVersionCode = '1'
+// }
+
+// def flutterVersionName = localProperties.getProperty('flutter.versionName')
+// if (flutterVersionName == null) {
+//     flutterVersionName = '1.0'
+// }
+
+// buildscript {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+//     dependencies {
+//         classpath "com.android.tools.build:gradle:8.0.2"  // Example classpath for the Android Gradle Plugin
+//         // classpath "com.google.gms:google-services:4.3.15"  // Google services classpath
+//     }
+// }
+// plugins {
+//     id "com.android.application"
+//     id "kotlin-android"
+//     id "dev.flutter.flutter-gradle-plugin"
+//     // id "com.google.gms.google-services"
+// }
+
+
+// android {
+//     namespace = "com.example.movies_app"
+//     compileSdkVersion 34
+//     ndkVersion "21.1.6352462"
+
+//     compileOptions {
+//         sourceCompatibility JavaVersion.VERSION_1_8
+//         targetCompatibility JavaVersion.VERSION_1_8
+//     }
+
+//     kotlinOptions {
+//         jvmTarget = '1.8'
+//     }
+
+//     sourceSets {
+//         main.java.srcDirs += 'src/main/kotlin'
+//     }
+
+//     defaultConfig {
+//         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+//         applicationId "com.example.movies_app"
+//         // You can update the following values to match your application needs.
+//         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
+//         minSdkVersion 23
+//         targetSdkVersion 34
+//         versionCode 1  // Adjust accordingly
+//         versionName "1.0.0"  // Adjust accordingly
+//         multiDexEnabled true
+//     }
+
+//     buildTypes {
+//         release {
+//             // TODO: Add your own signing config for the release build.
+//             // Signing with the debug keys for now, so `flutter run --release` works.
+//             signingConfig signingConfigs.debug
+//         }
+//     }
+// }
+
+// flutter {
+//     source '../..'
+// }
+
+// dependencies {
+//     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+// }
+
+
+// First, move the buildscript block above the plugins block
+// Move the buildscript block above plugins block
+
+
+
+//###############******************************
+ 
+// buildscript {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+//     dependencies {
+//         classpath "com.android.tools.build:gradle:8.0.2"  // Android Gradle plugin
+//         // If you're using Google services, include this:
+//         // classpath "com.google.gms:google-services:4.3.15"
+//     }
+// }
+
+// // Then, declare the plugins below the buildscript block
+// plugins {
+//     id "com.android.application" 
+//     id "kotlin-android" 
+//     id "dev.flutter.flutter-gradle-plugin"   // Correct Flutter plugin declaration
+//     // If you're using Google services, include this:
+//     // id "com.google.gms.google-services" apply false
+// }
+
+// android {
+//     namespace = "com.example.movies_app"
+//     compileSdkVersion 34
+//     ndkVersion "21.1.6352462"
+
+//     compileOptions {
+//         sourceCompatibility JavaVersion.VERSION_1_8
+//         targetCompatibility JavaVersion.VERSION_1_8
+//     }
+
+//     kotlinOptions {
+//         jvmTarget = '1.8'
+//     }
+
+//     sourceSets {
+//         main.java.srcDirs += 'src/main/kotlin'
+//     }
+
+//     defaultConfig {
+//         applicationId "com.example.movies_app"
+//         minSdkVersion 23
+//         targetSdkVersion 34
+//         versionCode 1
+//         versionName "1.0.0"
+//         multiDexEnabled true
+//     }
+
+//     buildTypes {
+//         release {
+//             signingConfig signingConfigs.debug
+//         }
+//     }
+// }
+
+// flutter {
+//     source '../..'
+// }
+
+// dependencies {
+//     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+// }
+
+
+// Remove the buildscript block's classpath for com.android.application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ###############################################################################
+
+
+
+
+
+
+// buildscript {
+//     ext.kotlin_version = "1.8.10"
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+//     dependencies {
+//         classpath "com.android.tools.build:gradle:8.0.2"  // Removed from here
+//         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        
+//         // If you're using Google services, include this:
+//         // classpath "com.google.gms:google-services:4.3.15"
+//     }
+// }
+
+// // Declare the plugins block properly, without the 'apply false' directive
+// plugins {
+//     id "com.android.application"
+//     id "kotlin-android"
+//     id "dev.flutter.flutter-gradle-plugin"
+//     // id "com.google.gms.google-services"
+// }
+
+// android {
+//     namespace = "com.example.movies_app"
+//     compileSdkVersion 34
+//     ndkVersion "21.1.6352462"
+
+//     compileOptions {
+//         sourceCompatibility JavaVersion.VERSION_1_8
+//         targetCompatibility JavaVersion.VERSION_1_8
+//     }
+
+//     kotlinOptions {
+//         jvmTarget = '1.8'
+//     }
+
+//     sourceSets {
+//         main.java.srcDirs += 'src/main/kotlin'
+//     }
+
+//     defaultConfig {
+//         applicationId "com.example.movies_app"
+//         minSdkVersion 23
+//         targetSdkVersion 34
+//         versionCode 1
+//         versionName "1.0.0"
+//         multiDexEnabled true
+//     }
+
+//     buildTypes {
+//         release {
+//             signingConfig signingConfigs.debug
+//         }
+//     }
+// }
+
+// flutter {
+//     source '../..'
+// }
+
+// dependencies {
+//     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+// }
+
+
+
+
+// ********************** * Initial                                         
+buildscript {
+    ext.kotlin_version = "1.8.10"
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.1.0"
+        // classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+// allprojects {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+// }
+
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.movies_app"
+    compileSdkVersion 34
+    ndkVersion "21.1.6352462"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    defaultConfig {
+        applicationId "com.example.movies_app"
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
